@@ -1,11 +1,11 @@
 package com.afs.tdd;
 
-public class Coordination {
+public class Position {
   private int x;
   private int y;
   private char D;
 
-  public Coordination(int x, int y, char D) {
+  public Position(int x, int y, char D) {
     this.x = x;
     this.y = y;
     this.D = D;

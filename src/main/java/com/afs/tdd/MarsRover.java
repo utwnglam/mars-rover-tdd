@@ -5,9 +5,9 @@ import java.util.List;
 
 public class MarsRover {
   private final List<Character> directionMap = Arrays.asList('N', 'E', 'S', 'W');
-  private final Coordination pos;
+  private final Position pos;
 
-  public MarsRover(Coordination coordination) {
+  public MarsRover(Position coordination) {
     this.pos = coordination;
   }
 
@@ -21,8 +21,19 @@ public class MarsRover {
         turnLeft();
         break;
       }
-      case 'R': {}
+      case 'R': {
+        turnRight();
+        break;
+      }
     }
+  }
+
+  private void turnRight() {
+    int newDIndex = directionMap.indexOf(pos.getD())+1;
+    if (newDIndex > 3) {
+      newDIndex = newDIndex - 4;
+    }
+    pos.setD(directionMap.get(newDIndex));
   }
 
   private void turnLeft() {
