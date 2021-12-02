@@ -27,9 +27,16 @@ public class MarsRover {
         pos.setY(pos.getY()+1);
         break;
       }
-      case 'E': {}
-      case 'S': {}
-      case 'W': {}
+      case 'E': {
+
+      }
+      case 'S': {
+
+      }
+      case 'W': {
+        pos.setX(pos.getX()-1);
+        break;
+      }
     }
   }
 

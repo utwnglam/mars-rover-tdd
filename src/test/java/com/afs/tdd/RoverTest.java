@@ -15,7 +15,7 @@ class RoverTest {
     }
 
     @Test
-    public void should_locationY_minus_one_given_direction_S_when_command_M() {
+    public void should_locationX_minus_one_given_direction_W_when_command_M() {
         MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'W'));
         char command = 'M';
 
@@ -35,7 +35,7 @@ class RoverTest {
     }
 
     @Test
-    public void should_locationX_minus_one_given_direction_W_when_command_M() {
+    public void should_locationY_minus_one_given_direction_S_when_command_M() {
         MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'S'));
         char command = 'M';
 
