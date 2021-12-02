@@ -44,4 +44,43 @@ class RoverTest {
         assertThat(result).isEqualTo("0 -1 S");
     }
 
+    @Test
+    public void should_direction_to_W_given_direction_N_when_command_L() {
+        MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'N'));
+        char command = 'L';
+
+        marsRover.executeAction(command);
+        String result = marsRover.getStatus();
+        assertThat(result).isEqualTo("0 0 W");
+    }
+
+    @Test
+    public void should_direction_to_S_given_direction_W_when_command_L() {
+        MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'W'));
+        char command = 'L';
+
+        marsRover.executeAction(command);
+        String result = marsRover.getStatus();
+        assertThat(result).isEqualTo("0 0 S");
+    }
+
+    @Test
+    public void should_direction_to_E_given_direction_S_when_command_L() {
+        MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'S'));
+        char command = 'L';
+
+        marsRover.executeAction(command);
+        String result = marsRover.getStatus();
+        assertThat(result).isEqualTo("0 0 E");
+    }
+
+    @Test
+    public void should_direction_to_N_given_direction_E_when_command_L() {
+        MarsRover marsRover = new MarsRover(new Coordination(0, 0, 'E'));
+        char command = 'L';
+
+        marsRover.executeAction(command);
+        String result = marsRover.getStatus();
+        assertThat(result).isEqualTo("0 0 N");
+    }
 }
