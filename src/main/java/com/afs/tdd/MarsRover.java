@@ -1,9 +1,10 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MarsRover {
-//  final HashMap DirectionMap: {
-//    NORTH: 'N', EAST: 'E',
-//      SOUTH: 'S', WEST: 'W'}
+  private final List<Character> directionMap = Arrays.asList('N', 'E', 'S', 'W');
   private final Coordination pos;
 
   public MarsRover(Coordination coordination) {
@@ -16,9 +17,20 @@ public class MarsRover {
         moveForward();
         break;
       }
-      case 'L': {}
+      case 'L': {
+        turnLeft();
+        break;
+      }
       case 'R': {}
     }
+  }
+
+  private void turnLeft() {
+    int newDIndex = directionMap.indexOf(pos.getD())-1;
+    if (newDIndex < 0) {
+      newDIndex = newDIndex + 4;
+    }
+    pos.setD(directionMap.get(newDIndex));
   }
 
   private void moveForward() {
