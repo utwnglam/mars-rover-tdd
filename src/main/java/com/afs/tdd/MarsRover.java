@@ -11,8 +11,14 @@ public class MarsRover {
     this.pos = coordination;
   }
 
-  public void executeAction(char command) {
-    switch (command) {
+  public void executeActions(String command) {
+    for (char ch: command.toCharArray()) {
+      executeAction(ch);
+    }
+  }
+
+  private void executeAction(char oneCommand) {
+    switch (oneCommand) {
       case 'M': {
         moveForward();
         break;
