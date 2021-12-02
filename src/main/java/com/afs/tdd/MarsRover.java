@@ -28,7 +28,8 @@ public class MarsRover {
         break;
       }
       case 'E': {
-
+        pos.setX(pos.getX()+1);
+        break;
       }
       case 'S': {
 
