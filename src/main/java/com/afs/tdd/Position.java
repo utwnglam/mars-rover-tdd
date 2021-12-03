@@ -3,12 +3,12 @@ package com.afs.tdd;
 public class Position {
   private int x;
   private int y;
-  private char D;
+  private char dir;
 
-  public Position(int x, int y, char D) {
+  public Position(int x, int y, char Direction) {
     this.x = x;
     this.y = y;
-    this.D = D;
+    this.dir = Direction;
   }
 
   public int getX() {
@@ -27,16 +27,16 @@ public class Position {
     this.y = y;
   }
 
-  public char getD() {
-    return D;
+  public char getDir() {
+    return dir;
   }
 
-  public void setD(char d) {
-    D = d;
+  public void setDir(char dir) {
+    this.dir = dir;
   }
 
   @Override
   public String toString() {
-    return String.format("%d %d %c", x, y, D);
+    return String.format("%d %d %c", x, y, dir);
   }
 }

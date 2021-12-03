@@ -3,7 +3,7 @@ package com.afs.tdd;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class RoverTest {
+class MarsRoverTest {
     @Test
     public void should_locationY_add_one_given_direction_N_when_command_M() {
         MarsRover marsRover = new MarsRover(new Position(0, 0, 'N'));

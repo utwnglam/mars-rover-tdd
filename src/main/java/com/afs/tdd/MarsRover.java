@@ -31,27 +31,29 @@ public class MarsRover {
         turnRight();
         break;
       }
+      default:
+//        break;
     }
   }
 
   private void turnRight() {
-    int newDIndex = directionMap.indexOf(pos.getD())+1;
-    if (newDIndex > 3) {
-      newDIndex = newDIndex - 4;
+    int newDirIndex = directionMap.indexOf(pos.getDir())+1;
+    if (newDirIndex > 3) {
+      newDirIndex = newDirIndex - directionMap.size();
     }
-    pos.setD(directionMap.get(newDIndex));
+    pos.setDir(directionMap.get(newDirIndex));
   }
 
   private void turnLeft() {
-    int newDIndex = directionMap.indexOf(pos.getD())-1;
-    if (newDIndex < 0) {
-      newDIndex = newDIndex + 4;
+    int newDirIndex = directionMap.indexOf(pos.getDir())-1;
+    if (newDirIndex < 0) {
+      newDirIndex = newDirIndex + directionMap.size();
     }
-    pos.setD(directionMap.get(newDIndex));
+    pos.setDir(directionMap.get(newDirIndex));
   }
 
   private void moveForward() {
-    switch (pos.getD()) {
+    switch (pos.getDir()) {
       case 'N': {
         pos.setY(pos.getY()+1);
         break;
@@ -68,6 +70,8 @@ public class MarsRover {
         pos.setX(pos.getX()-1);
         break;
       }
+      default:
+//        break;
     }
   }
 
